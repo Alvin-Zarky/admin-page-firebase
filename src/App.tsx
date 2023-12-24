@@ -1,21 +1,20 @@
-import React from 'react';
-import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
-import { Router } from './router';
-import Dashboard from './views/dashboard';
-import SignIn from './views/sign-in';
-import SignUp from './views/sign-up';
-import useSelectorHook from './hooks/useSelectorHook';
-import NotFound from './views/not-found';
-import AddCategory from './views/add-category';
-import AddContent from './views/add-content';
-import AddBox from './views/add-box';
-import './App.css';
-import LiveSearchCategory from './views/live-search-category';
-import LiveSearchContent from './views/live-search-content';
+import React from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Router } from "./router";
+import Dashboard from "./views/dashboard";
+import SignIn from "./views/sign-in";
+import SignUp from "./views/sign-up";
+import useSelectorHook from "./hooks/useSelectorHook";
+// import NotFound from './views/not-found';
+import AddCategory from "./views/add-category";
+import AddContent from "./views/add-content";
+import AddBox from "./views/add-box";
+import "./App.css";
+import LiveSearchCategory from "./views/live-search-category";
+import LiveSearchContent from "./views/live-search-content";
 
 function App() {
-
-  const {user} = useSelectorHook(state => state.authSignIn)
+  const { user } = useSelectorHook((state) => state.authSignIn);
   return (
     <BrowserRouter>
       <Switch>
@@ -52,9 +51,9 @@ function App() {
           {!user && <Redirect to={Router.SIGN_IN} />}
           {user && <AddBox />}
         </Route>
-        <Route path={Router.NOT_FOUND}>
+        {/* <Route path={Router.NOT_FOUND}>
           <NotFound />
-        </Route>
+        </Route> */}
       </Switch>
     </BrowserRouter>
   );

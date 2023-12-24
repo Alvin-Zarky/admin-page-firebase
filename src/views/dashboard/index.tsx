@@ -1,21 +1,20 @@
-import React from 'react'
-import {Container, Row, Col} from "reactstrap"
-import SideBar from '../../components/Sidebar';
-import TopBar from '../../components/Topbar';
-import {AiFillHome} from "react-icons/ai"
-import {IoMdTimer} from "react-icons/io"
-import {BiCategoryAlt} from "react-icons/bi"
-import {FiSettings} from "react-icons/fi"
-import {MdContentPaste} from "react-icons/md"
-import {FaUser} from "react-icons/fa"
-import { useDataCount } from '../../hooks/useDataCount';
-import './dashboard.scss';
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import SideBar from "../../components/Sidebar";
+import TopBar from "../../components/Topbar";
+import { AiFillHome } from "react-icons/ai";
+import { IoMdTimer } from "react-icons/io";
+import { BiCategoryAlt } from "react-icons/bi";
+import { FiSettings } from "react-icons/fi";
+import { MdContentPaste } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
+import { useDataCount } from "../../hooks/useDataCount";
+import "./dashboard.scss";
 
 export default function Dashboard() {
-  
-  const {count:userCount} = useDataCount('users')
-  const {count: categoryCount} = useDataCount('categories')
-  const {count: contentCount} = useDataCount('contents')
+  const { count: userCount } = useDataCount("users");
+  const { count: categoryCount } = useDataCount("categories");
+  const { count: contentCount } = useDataCount("contents");
   return (
     <>
       <Container className="padd-lr0" fluid>
@@ -65,7 +64,7 @@ export default function Dashboard() {
                   </Col>
                   <Col xl="4" lg="4" md="4">
                     <div className="part-box-content">
-                    <Row>
+                      <Row>
                         <Col xl="6" lg="6" md="6">
                           <div className="title-box">
                             <span>Category</span>
@@ -86,7 +85,7 @@ export default function Dashboard() {
                   </Col>
                   <Col xl="4" lg="4" md="4">
                     <div className="part-box-boxes">
-                    <Row>
+                      <Row>
                         <Col xl="6" lg="6" md="6">
                           <div className="title-box">
                             <span>Content</span>
@@ -112,5 +111,5 @@ export default function Dashboard() {
         </Row>
       </Container>
     </>
-  )
+  );
 }
